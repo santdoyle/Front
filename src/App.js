@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import loginScreen from './screens/loginScreen';
+import photosScreen from './screens/photosScreen';
+import postsScreen from './screens/postsScreen';
+import NavBar from './components/layout/navBar';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
+/**
+ * Screen render React Router
+ */
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Route path="/login" component={loginScreen} />
+        <Route path="/posts" component={postsScreen} />
+        <Route path="/photos" component={photosScreen} />
+      </div>
+    </Router>
   );
 }
 
