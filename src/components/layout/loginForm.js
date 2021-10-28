@@ -26,7 +26,7 @@ const LoginForm = () => {
                 password: state.password
             }
 
-            const respLogin = await axios.post('http://localhost:5050/login', data)
+            const respLogin = await axios.post(`${process.env.REACT_APP_API_URL}/login`, data)
 
             if(respLogin.data.info.code === 200){
                 setState(prevState => ({
@@ -72,7 +72,7 @@ const LoginForm = () => {
                     onChange={handleChange}
                     placeholder="name@example.com" 
                 />
-                <label for="floatingInput">Your Email</label>
+                <label htmlFor="floatingInput">Your Email</label>
             </div>
             <div className="form-floating">
                 <input 
@@ -83,7 +83,7 @@ const LoginForm = () => {
                     onChange={handleChange}
                     placeholder="Password"
                 />
-                <label for="floatingPassword">Password</label>
+                <label htmlFor="floatingPassword">Password</label>
             </div>
             
             <button 

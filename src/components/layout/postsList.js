@@ -10,7 +10,7 @@ const PostsLists = () =>{
 
     useEffect(() => {
         (async () => {
-            const getPosts = await axios.get('http://localhost:5050/posts-list', {
+            const getPosts = await axios.get(`${process.env.REACT_APP_API_URL}/posts-list`, {
                 headers: {
                     'x-access-token': localStorage.getItem('token')
                 }
@@ -30,7 +30,7 @@ const PostsLists = () =>{
                 <div className="row d-flex justify-content-between">
                     {posts.code === 500 
                         ?  
-                            <ErrorMsg code={posts.code} message={posts.message} action={'/login'} />
+                            <ErrorMsg code={posts.code} message={posts.message} action={'/'} />
                         : 
                             posts.map(post => {
                                 return(

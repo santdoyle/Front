@@ -17,7 +17,7 @@ const PhotosLists = () =>{
     useEffect(() => {
 
         (async () => {
-            const getPhotos = await axios.get(`http://localhost:5050/photos-list?limit=${counter.limit}&offset=${counter.offset}`, {
+            const getPhotos = await axios.get(`${process.env.REACT_APP_API_URL}/photos-list?limit=${counter.limit}&offset=${counter.offset}`, {
                 headers: {
                     'x-access-token': localStorage.getItem('token')
                 }
@@ -57,7 +57,7 @@ const PhotosLists = () =>{
             <div>
                 {posts.code === 500
                     ?
-                        <ErrorMsg code={posts.code} message={posts.message} action={'/login'} />
+                        <ErrorMsg code={posts.code} message={posts.message} action={'/'} />
                     :
                     <div>
                         <div className="d-flex justify-content-center">    
