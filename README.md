@@ -7,7 +7,7 @@ https://github.com/santdoyle/Back/
 
 ## Configuraciones
 
-Antes de iniciar la aplicación es necesario **configurar la variable de entorno REACT_APP_API_URL** para definir la url a dónde se realizarán las peticiones. 
+Antes de iniciar la aplicación es necesario **configurar la variable de entorno REACT_APP_API_URL** para definir la url a dónde se realizarán las peticiones. Debe ser la dirección correspondiente al backend del repositorio antes mencionado.
 
 ```
 REACT_APP_API_URL=http://localhost:5050
